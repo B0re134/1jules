@@ -72,7 +72,6 @@ model Content {
   id          String    @id @default(cuid())
   title       String
   description String?
-  author      String?
   coverImage  String?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
@@ -83,7 +82,6 @@ model Chapter {
   id          String    @id @default(cuid())
   title       String
   number      Float
-  pages       String[]
   contentId   String
   content     Content   @relation(fields: [contentId], references: [id], onDelete: Cascade)
   createdAt   DateTime  @default(now())

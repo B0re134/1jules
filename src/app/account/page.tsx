@@ -3,7 +3,6 @@
 import { useSession } from "next-auth/react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 export default function AccountPage() {
   const { data: session, status, update } = useSession();
@@ -95,22 +94,10 @@ export default function AccountPage() {
 
       <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
         <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Saved Reading History</h2>
-        {(session.user as any)?.readingProgress ? (
-          <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-md flex justify-between items-center">
-             <div>
-                <p className="font-medium text-gray-800 dark:text-gray-200">Last read chapter</p>
-                <p className="text-sm text-gray-500">ID: {(session.user as any).readingProgress}</p>
-             </div>
-             <Link href={`/read/${(session.user as any).readingProgress}`} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-                Continue Reading
-             </Link>
-          </div>
-        ) : (
-          <div className="p-4 border border-dashed border-gray-300 dark:border-gray-600 rounded-md text-center text-gray-500 dark:text-gray-400">
-            <p>No reading history saved yet.</p>
-            <p className="text-sm mt-2">Start reading to see your progress here!</p>
-          </div>
-        )}
+        <div className="p-4 border border-dashed border-gray-300 dark:border-gray-600 rounded-md text-center text-gray-500 dark:text-gray-400">
+          <p>No reading history saved yet.</p>
+          <p className="text-sm mt-2">Start reading to see your progress here!</p>
+        </div>
       </div>
     </div>
   );
