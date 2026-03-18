@@ -1,0 +1,26 @@
+
+> manga-vault@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.7 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+- Environments: .env
+
+✓ Starting...
+✓ Ready in 1332ms
+○ Compiling / ...
+ GET / 200 in 5.5s (compile: 5.1s, render: 431ms)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+ GET /api/auth/session 200 in 3.1s
+ GET /login 200 in 1969ms (compile: 1864ms, render: 105ms)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+[next-auth][warn][NEXTAUTH_URL]
+https://next-auth.js.org/warnings#nextauth_url
+[next-auth][warn][NO_SECRET]
+https://next-auth.js.org/warnings#no_secret
+ GET /api/auth/session 200 in 454ms (compile: 397ms, render: 58ms)
+ POST /api/auth/_log 200 in 754ms (compile: 693ms, render: 62ms)
+ GET /register 200 in 712ms (compile: 599ms, render: 113ms)
+ GET /api/auth/session 200 in 40ms (compile: 28ms, render: 12ms)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
