@@ -24,3 +24,14 @@ https://next-auth.js.org/warnings#no_secret
  GET /register 200 in 712ms (compile: 599ms, render: 113ms)
  GET /api/auth/session 200 in 40ms (compile: 28ms, render: 12ms)
 prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+  Reload env: .env
+  Reload env: .env
+✓ Compiled in 489ms
+✓ Compiled in 23ms
+Database connection failed during build, using empty content list.
+ GET / 200 in 709ms (compile: 230ms, render: 480ms)
+[next-auth][warn][NEXTAUTH_URL]
+https://next-auth.js.org/warnings#nextauth_url
+[next-auth][warn][NO_SECRET]
+https://next-auth.js.org/warnings#no_secret
+ GET /api/auth/session 200 in 131ms (compile: 94ms, render: 37ms)
