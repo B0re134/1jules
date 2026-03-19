@@ -13,7 +13,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
               <a href="/admin" className="block p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700">Dashboard</a>
             </li>
             <li>
-              <a href="/admin/content" className="block p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700">Manage Content</a>
+              <a href="/admin/manga" className="block p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700">Manage Manga</a>
             </li>
             <li>
               <a href="/admin/users" className="block p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700">Manage Users</a>
