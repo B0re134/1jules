@@ -9,13 +9,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
-enum Role {
-  USER
-  ADMIN
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model User {
@@ -25,7 +20,7 @@ model User {
   emailVerified   DateTime?
   password        String?
   image           String?
-  role            Role      @default(USER)
+  role            String    @default("USER")
   readingProgress String?
   posts           CommunityPost[]
   comments      Comment[]
@@ -39,12 +34,12 @@ model Account {
   type               String
   provider           String
   providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
+  refresh_token      String?
+  access_token       String?
   expires_at         Int?
   token_type         String?
   scope              String?
-  id_token           String?  @db.Text
+  id_token           String?
   session_state      String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -84,7 +79,7 @@ model Chapter {
   id          String    @id @default(cuid())
   title       String
   number      Float
-  pages       String[]
+  pages       String    // SQLite doesn't support arrays, so we'll store a JSON string
   contentId   String
   content     Content   @relation(fields: [contentId], references: [id], onDelete: Cascade)
   createdAt   DateTime  @default(now())
@@ -94,7 +89,7 @@ model Chapter {
 model CommunityPost {
   id          String    @id @default(cuid())
   title       String
-  body        String    @db.Text
+  body        String
   authorId    String
   author      User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
   comments    Comment[]
@@ -104,7 +99,7 @@ model CommunityPost {
 
 model Comment {
   id          String        @id @default(cuid())
-  body        String        @db.Text
+  body        String
   authorId    String
   author      User          @relation(fields: [authorId], references: [id], onDelete: Cascade)
   postId      String

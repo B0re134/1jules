@@ -75,27 +75,27 @@ async function main() {
             {
               title: "The Beginning",
               number: 1,
-              pages: [
+              pages: JSON.stringify([
                 `https://picsum.photos/seed/${i * 10 + 1}/800/1200`,
                 `https://picsum.photos/seed/${i * 10 + 2}/800/1200`,
                 `https://picsum.photos/seed/${i * 10 + 3}/800/1200`,
-              ],
+              ]),
             },
             {
               title: "The Journey Continues",
               number: 2,
-              pages: [
+              pages: JSON.stringify([
                 `https://picsum.photos/seed/${i * 10 + 4}/800/1200`,
                 `https://picsum.photos/seed/${i * 10 + 5}/800/1200`,
-              ],
+              ]),
             },
             {
               title: "A New Threat",
               number: 3,
-              pages: [
+              pages: JSON.stringify([
                 `https://picsum.photos/seed/${i * 10 + 6}/800/1200`,
                 `https://picsum.photos/seed/${i * 10 + 7}/800/1200`,
-              ],
+              ]),
             },
           ],
         },
