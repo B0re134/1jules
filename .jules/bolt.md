@@ -1,0 +1,3 @@
+## 2024-03-23 - Prisma Client Connection Exhaustion and Unbounded Queries in Next.js
+**Learning:** Instantiating `new PrismaClient()` in every Next.js route and component causes severe database connection exhaustion and memory leaks during development (due to hot reloading) and degrades performance in serverless environments. Additionally, using `findMany()` without a `take` limit on the main page can severely bloat the initial payload and DB query execution time as the database grows.
+**Action:** Always use a global singleton pattern for PrismaClient in Next.js applications, and ensure unbounded queries on lists have a `take` limit or pagination.
