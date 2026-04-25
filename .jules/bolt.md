@@ -1,0 +1,3 @@
+## 2026-04-25 - [Prisma N+1 and Memory Overhead with JSON fields]
+**Learning:** The `Chapter` model's `pages` field is a large stringified JSON array of image URLs. Fetching this field unintentionally using `findMany` or `include: { chapters: true }` causes massive memory consumption and database payload overhead.
+**Action:** When querying adjacent records (like 'next' or 'previous' chapters) in Prisma, use targeted `findFirst` queries with `lt`/`gt` conditions and `select: { id: true }` instead of fetching the entire array with `findMany`. Avoid fetching the `pages` field unless rendering the actual reading UI. Always use a targeted `select` instead.
