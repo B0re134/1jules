@@ -1,0 +1,4 @@
+💡 What: Added a `take: 24` limit and a targeted `select` clause to the `findMany` Prisma query in `src/app/(main)/page.tsx`.
+🎯 Why: The previous implementation fetched all rows and all columns (including potentially large unused fields) without limits, which would lead to unbounded memory usage and slow query times as the database grows.
+📊 Impact: Prevents memory overflow and reduces database payload size by fetching only the 24 most recent items and strictly the required fields (`id`, `title`, `coverImage`).
+🔬 Measurement: Verify by checking the query logs or network payload when loading the main page. The payload should be significantly smaller and load faster.
